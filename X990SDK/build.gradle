@@ -1,6 +1,20 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/jbayoli/X990SDK"
+            credentials {
+                username = System.getenv("jbayoli")
+                password = System.getenv("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")
+            }
+        }
+    }
 }
 
 android {
