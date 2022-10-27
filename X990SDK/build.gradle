@@ -9,9 +9,11 @@ publishing {
         maven {
             name = "GitHubPackages"
             url = "https://maven.pkg.github.com/jbayoli/X990SDK"
+            def localProperty = new Properties()
+            localProperty.load(new FileInputStream(rootProject.file("local.properties")))
             credentials {
-                username = project.findProperty("gpr.user")
-                password = project.findProperty("gpr.key")
+                username = localProperty.getProperty("user")
+                password = localProperty.getProperty("key")
             }
         }
     }
