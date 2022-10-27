@@ -1,0 +1,484 @@
+version 2.6.0
+1. 添加getDukptCFG\setDukptCFG接口
+2. 如果没有使用VFService下载dukpt而使用VFService的dukpt计算接口，ksn自动+1
+3. smartmanager增加powerUp获取ATR接口
+
+version 2.5.4
+正式版本2.5.4版本释放
+
+version 2.5.3.1
+rfcard去掉listener=null的操作，防止上层应用崩溃
+
+version 2.5.3
+正式版本释放
+
+version 2.5.2.3
+更新emvl2.so，修复多应用卡片导致内核崩溃的问题
+
+version 2.5.2.2
+CVM签名是否需要签名逻辑修改
+
+version 2.5.2.1
+非接cardReset接口添加判断卡片是否存在
+更新测试版本sdk（20190603b02）
+
+version 2.5.2.1
+修复dukptkey ksn在某些情况下没有更新的bug
+
+version 2.5.2
+正式释放版本2.5.2
+
+version 2.5.1.1
+1.处理卡上电失败后的错误提示
+2.处理终端国家代码（9F1A）aid里设置后再取出来值不对的问题
+
+version 2.5.0.7
+处理接触判断cvm签名的错误
+
+version 2.5.0.6
+添加针对非接卡上电失败后的提示“EMV try again”
+非接9F1A（终端国家代码）使用AID里的值，而非5F2A（交易货币代码）
+
+version 2.5.0.5
+风险管理传入的金额应该是0，而非交易金额（底层是把交易金额+这个风险管理金额进行处理从而设置TVR）
+
+version 2.5.0.4
+处理摄像头扫码成功后MediaPlay换成SoundPool提高效率
+pboc/emv检卡取消listener=null的设置，防止service崩溃
+
+version 2.5.0.3
+1.更新测试版本SDK（20190531b01）解决多线程内核崩溃问题
+2.修复gitlab上的关于摄像头计时器锁屏再解锁后计时器不起作用的bug
+3.修复摄像头第一次启动扫码后在启动黑屏的问题
+
+version 2.5.0.2
+处理pboc、非接检卡多线程导致的service崩溃问题
+
+version 2.5.0.1
+smartCard添加判断卡状态接口
+
+version 2.4.6.0
+更新版本号
+
+version 2.4.6
+正式释放版本2.5.0
+更新正式版本sdk（20190505b03）
+
+version 2.4.5.3
+1.修改android7下的beeper两个声音之间的间隔频率
+2.修改pboc获取随机数时如果获取不到导致内核崩溃的问题
+
+version 2.4.5.2
+android7下beeper声音太尖锐，修改beeper频率
+
+version 2.4.5.1
+clearKey添加删除dukptkey参数
+
+version 2.4.5.0
+增加获取证数的接口
+version 2.4.4.11
+9F11优先取PSE，后面如果ADF里也存在这个值，则覆盖成ADF里的值
+
+version 2.4.4.10
+同步getCardData\setEmvData\getAppTLVList接口
+
+version 2.4.4.9
+1.增加gpo、gac以及appblock错误的信息
+2.更新测试版本sdk(20190509b01)和emvl2.so
+
+version 2.4.4.8
+1.rfcard添加接口刷卡成功后可以获取卡序列号
+2.应用选择返回tag87和tag9f11信息给上层
+3.更新测试版本sdk(20190506b01)和emvl2.so
+
+version 2.4.3.8
+按照马来西亚项目需求，修改rs232串口接口超时的处理逻辑
+
+version 2.4.2.8
+合并RS_2.0.9分支
+
+version 2.4.2.7
+更换国产非接内核V1.0.7，解决脱机pin的问题
+
+version 2.4.2.6
+处理如果没有黑名单的时候清除黑名单产生的异常
+更新测试版本sdk(20190426b01)
+
+version 2.4.2.5
+修改issue：218 issue：217错误，Android7下获取Firmware Hardware Version错误的问题
+
+version 2.4.2.4
+修改了issue220:调用EMV的checkcard接口依次执行刷卡、挥卡、插卡各一次，设备信息中的各种寻卡次数返回有误
+
+version 2.4.2.3
+1.更新系统签名文件支持android7
+2.非接简易流程添加返回通知
+
+version 2.4.2.2
+emvl2.so更新，尝试解决android7插卡崩溃的问题
+
+version 2.4.2.1
+添加Utils类，添加了image对象，实现了图片压缩功能
+
+version 2.3.2.1
+合并rs_2.0.9分支，更改版本号
+version 2.1.23.1
+增加felica功能
+
+version 2.1.22.1
+importPin接口null改成bypass，而非cancel
+
+version 2.1.22.0
+添加黑名单需求和检卡时设置online的需求
+
+version 2.0.22.2
+更新最新的sdk（20190419b01）
+
+version 2.3.2.0
+非接脱机批准时返回cvmr
+
+version 2.3.1.0
+修改updateAid逻辑
+
+version 2.3.0.0
+合并felica分支，修改版本号
+
+version 2.2.3.1
+合并分支，修改版本号
+
+version 2.2.2.1
+合并分支，修改版本号
+
+version 2.2.1.1
+合并分支，修改版本号
+
+version 2.2.0.1
+修改黑名单BLK构建函数
+
+version 2.2.0.0
+合并2.0.9分支，更新版本号
+
+version 2.1.16.0
+1.处理下载udol时tlv解析错误的bug
+2.处理串口传输时修改系统时间的sdk的bug
+3.处理dukpt ksn多三个字节的bug
+
+version 2.1.15.0
+pbb项目非接联机回调返回CVMR
+
+version 2.0.22.1
+1.处理issues/235:非接卡模块，authSector接口，无法对S70卡的多个扇区进行授权
+2.处理issues/238:入参KSNAutoIncrease未实现其功能
+
+version 2.0.21.1
+encryptPinFormat0判断只有是dukpt的时候ksn才会+1
+
+version 2.0.20.1
+1.处理在一台没有下载过dukpt的机器上获取ksn，会报异常的问题
+2.pinpad计算mac，当传入的desType是0的时候，判断为参数错误
+3.处理issues/174:loadWorkKeyWithDecryptType接口，入参decKeyType越界时，返回的错误信息有误
+4.修改XmlUtil，setElement如果没有找到element则添加，添加的element autoincrease默认是true；
+
+version 2.0.19.1
+1.修改loaddukpt后ksn加1的处理逻辑
+
+version 2.0.18.1
+1.处理issues/161:非接卡模块searchCard接口，响应区放置多张卡片，返回的错误码有误
+
+version 2.0.17.1
+1.处理issues/230:使用DUKPT密钥进行PIN加密后，KSN未自增1
+2.处理issues/232:使用DUKPT密钥执行startPINinput接口加密PIN后，KSN未自增1
+
+version 2.0.16.1
+1.处理issues/233:startPinInput接口加密PIN失败，服务报空指针错误
+2.处理pinpad关闭时导致的崩溃
+
+version 2.0.15.1
+1.处理issues/228:loadEncryptMainKeyEX接口，algorithmType越界，底层报“KCV校验错”
+2.处理issues/229:EMV流程中，appSelectTimeOut = -1，服务断开连接
+
+version 2.0.14.1
+1.处理issues/215:increaseKSN接口返回的KSN，前面存在多余的3个字节“000010”
+
+version 2.0.13.1
+1.处理issues/226:EMV流程中，panConfirmTimeOut = -1，服务断开连接
+2.处理issues/214:某索引下载了DUKPT密钥，但getDukptKsn无法获取KSN值
+3.处理issues/221:挥卡EMV流程，onConfirmCardInfo回调结果中，CARD_SN = null
+3.处理issues/207:loadWorkKeyEX接口，下载工作密钥失败
+
+version 2.0.12.1
+1.处理issues/200:calculateByDataKey接口，入参越界未报错
+2.处理issues/199:encryptPinFormat0接口，desType = AES时，加密失败
+3.处理issues/190:encryptTrackDataWithAlgorithmType接口，当入参keyId与下载的dukpt密钥索引不一致时，报错信息有误
+4.处理issues/183:addBarCode接口，当format.barCodeType越界时，报错信息不明确
+5.处理issues/106:串口读取数据时，expectLen < = 0时，未报错
+
+version 2.0.11.1
+1.处理issues/172:loadTEKWithAlgorithmType接口，存在重复代码
+2.处理issues/173:不同的索引下载相同的密钥时，报错“存在相同密钥”
+3.处理issues/174:loadWorkKeyWithDecryptType接口，入参decKeyType越界时，返回的错误信息有误
+4.处理issues/175:loadTEKWithAlgorithmType接口，算法类型 = AES密文时，下载失败，报KCV校验错
+5.处理issues/176:loadMainKeyWithAlgorithmType接口，算法类型 = 3DES密文，依然能下载成功
+6.处理issues/177:calcMACWithCalType接口，type = 0（X99）时，计算结果与预期结果不一致
+7.处理issues/178:calcMACWithCalType接口，使用dukpt密钥加密数据时，SDK底层提示other error，加密失败
+8.处理issues/179:calcMACWithCalType接口，type = 1（X919）、desType = DES时，计算结果与预期结果不一致
+
+version 2.0.10.1
+1.处理issues/210:在已下载传输密钥的情况下，下载密文dukpt密钥失败
+2.处理issues/209:loadDukptKeyEX接口，extend = null时，服务报空指针错误
+3.处理issues/207:loadWorkKeyEX接口，下载工作密钥失败
+4.密钥处理修改较大，传输密钥取消默认保存在id=0上，所以后面的主密钥\dukpt逻辑也相应修改
+5.原pinpad里的dukpt逻辑修改，改动较大
+
+version 2.0.9.1
+1.处理issues/161:searchCard接口，响应区放置多张卡片，返回的错误码有误
+2.处理issues/162:非接卡activate(driver, responseData)接口，出参为4字节大小空间时，服务抛remote exception
+3.处理issues/164:readBlock接口，为读取数据分配的空间不足16字节时，服务抛remote exception
+4.处理issues/165:对M1卡未经授权认证的block进行增减值操作，依然返回成功
+
+version 2.0.8.4
+国产非接内核支持删除、清空aid\rid
+
+version 2.0.8.3
+1.修复应用选择timeout写死10s的bug
+2.修复卡号确认时updateCAPK崩溃的bug
+3.更新测试版本sdk(20190329b02)
+
+version 2.0.8.2
+修复密码键盘有几率在交易的时候弹出两次的bug
+
+version 2.0.8.1
+添加应用选择超时时间，默认60s
+
+version 2.0.8.0
+添加dukpt变种衍生算法的支持
+
+version 2.0.7.7
+DeviceInfoManager添加获取各个内核版本接口
+
+version 2.0.7.6
+非接内核版本更新1.0.5版本
+
+version 2.0.7.5
+onTransactionResult返回脱机批准时，可以通过bundle获取是否需要签名的信息
+
+version 2.0.7.4
+添加针对paypass泰国认证增加aid参数默认参数配置
+
+version 2.0.7.3
+添加主密钥加密主密钥模式
+添加下载明文dukpt方法
+
+version 2.0.7.2
+iskeyExist接口添加判断传输密钥是否存在的参数
+
+version 2.0.7.1
+1.获取二磁给上层时去掉tag和长度，只传value
+2.卡号确认增加卡种类参数
+3.修复磁条非接卡获取卡片信息为空的bug
+
+version 2.0.7
+修改正式释放版本号
+
+version 2.0.6.6
+1. 更新1.0.4内核后，处理非接简易流程的实现方式
+2. 新内核卡号确认回调通知使用线程去实现
+
+version 2.0.6.5
+更新国产非接内核1.0.4版本
+
+version 2.0.6.4
+处理pinpad弹出后不能输入密码的问题
+
+version 2.0.6.3
+增加对clssKernel.preProcess()返回结果的处理
+
+version 2.0.6.2
+更新updateRid内部处理，只有公钥hash值为空或全0的时候我们自己计算hash
+
+version 2.0.6.1
+修改android7密码键盘弹出失败的bug
+
+version 2.0.6.0
+添加对android7密码键盘弹出时view添加延时操作
+
+version 2.0.5.0
+添加设置"卡号确认"超时时间
+
+version 2.0.4.0
+合并service1.X.X的版本改动，未来middleware的非接内核版本service不再更新
+
+version 2.0.3.25
+更新CTLSKernelID中pure内核的id值
+更新国产内核1.0.3Beta（上一个版本未注册内核）
+
+version 2.0.3.24
+修改insertCardReader.getSlotNo()实现，解决同时创建多个对象后，获取的slotNo是最后一个的问题
+更新国产内核1.0.3Beta
+
+version 2.0.3.23
+1.onRequestOnlineProcess接口返回是否需要签名的信息
+2.startEmv添加otherAmount传入参数，以前默认是0
+
+version 2.0.3.22
+registerKernerAid第一个参数是ascii数组而非bcd数组
+
+version 2.0.3.21
+1.合并service1.0接口说明以及接口改动
+2.更新sdk版本20181226b07
+
+version 2.0.2.21
+巴西需求非接卡特殊aid支持内核
+
+version 2.0.1.21
+更新非接内核测试版本1.22 Beta
+
+version 2.0.1.20
+处理磁条非接接收不到卡号的bug
+
+version 2.0.1.19
+addBarcode添加条码格式
+
+version 2.0.1.18
+处理mastercard AB卡验证不过去的问题，处理磁条非接卡问题
+
+version 2.0.1.17
+修复smartCardReaderManager切换slot后不能创建对应slot实例的bug
+
+version 2.0.1.16
+更新国产非接内核，解决部分mastercard案例不通过的问题
+
+version 2.0.1.15
+处理abortEMV、abortPBOC后空指针的bug
+
+version 2.0.1.14
+更新mastercard非接内核
+
+version 2.0.1.13
+处理内卡PBOC流程，pin = 空字节数组时，服务报空指针异常
+
+version 2.0.1.12
+简易流程默认包含卡号确认
+
+version 2.0.1.11
+1.接触卡片获取卡片数据，只返回value而非TLV
+2.修改非接删除aid参数错误的bug
+
+version 2.0.1.10
+替换非接国产内核1.00 Beta版本,支持Paypass、Paywave、Discover、AMEX、Pure、qUICS
+
+version 2.0.1.9
+处理检卡回调获取卡号和sn的时候，直接返回tlv的value
+
+version 2.0.1.8
+解决获取卡号sn失败的问题
+
+version 2.0.1.7
+添加对visa卡片case11（查看手机）的支持
+
+version 2.0.1.6
+更新非接库0.99.4版本
+
+version 2.0.1.5
+交易参数添加设置交易随机数
+
+version 2.0.1.4
+修复kernel id没有匹配上的bug
+
+version 2.0.1.3
+修改内核找不到公钥的问题
+
+version 2.0.1.2
+添加对取消pin输入的处理流程
+
+version 2.0.1.1
+添加对取消卡号确认的处理流程
+
+version 2.0.1.0
+更新非接内核，修复9f66(ttq)没有设置到底层的bug
+
+version 2.0.0.0
+添加新非接内核，gradle里可以配置使用老非接内核还是新非接内核
+
+version 1.6.1.1
+添加工作密钥加解密接口
+
+version 1.6.1.0
+合并泰国、柬埔寨分支改动到develop，并更新sdk（20181031）
+
+version 1.6.0.2
+增加获取tamper code接口
+
+version 1.6.0.1
+修正3des加解密CBC模式计算出错的bug
+
+version 1.6.0.0
+添加device对象的权限检查功能
+
+version 1.5.5.0
+pboc2emv
+
+version 1.5.4.4
+增加获取MEID接口
+
+version 1.5.4.3
+增加系统信息若干接口
+version 1.5.4.2
+接触卡片在卡号确认时不做aid白名单校验
+
+version 1.5.4.1
+添加应用选择返回aid还是应用名称的选项
+
+version 1.5.4.0
+解决柬埔寨银行自己的卡，aid不支持的问题，添加了对AMEX卡的支持
+
+version 1.5.3.11
+解决泰国DCC在pobc流程中打印造成密码键盘异常的问题
+
+version 1.5.3.10
+更新emvl2.so 解决获取9f53失败的问题
+
+version 1.5.3.9
+startPboc添加货币代码5F2A设置选项
+
+version 1.5.3.8
+非接库版本ctls_lib 01.00.39
+MK DF8118的签名，联机PIN指示bit根据cap设置，其他bit为0;
+
+version 1.5.3.7
+非接库版本ctls_lib 01.00.38
+VK恢复为01.00.32版本(密文17);
+
+version 1.5.3.6
+非接库版本ctls_lib 01.00.37
+支持磁条非接卡
+
+version 1.5.3.5
+非接库版本ctls_lib 01.00.36
+MK MS mode随机数(9F6A)转换为BCD码
+
+version 1.5.3.4
+非接添加对9F1D的处理
+
+version 1.5.2.4
+pboc transType添加对CASH的处理
+
+version 1.5.2.3
+添加对ic卡fallback的处理
+
+version 1.5.2.2
+联机失败后转脱机批准
+
+version 1.5.2.1
+更新emvL2.so解决JCB应用锁定后内核返回来的错误信息不正确的问题
+更新非接库，添加release版本屏蔽内核日志功能
+去除自动恢复aid和rid的功能
+
+version 1.5.2.0
+添加密码键盘0~9顺序显示功能
+
+version 1.5.1.0
+增加pboc退货（全流程）选项
+
+version 1.4.0
+添加计算pinblock功能
